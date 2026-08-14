@@ -1,0 +1,24 @@
+# Node
+node_modules/
+.next/
+frontend/.env*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ML artifacts (raw data stays local, trained model gets committed later deliberately)
+ml/data/*.csv
+!ml/data/.gitkeep
+ml/models/*.joblib
+ml/notebooks/.ipynb_checkpoints/
+
+# Env / secrets
+.env
+.env.local
+backend/.env
+
+# OS
+.DS_Store
