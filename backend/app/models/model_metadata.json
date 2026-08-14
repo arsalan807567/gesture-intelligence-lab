@@ -1,0 +1,100 @@
+{
+  "model_type": "RandomForestClassifier",
+  "training_date": "2026-08-14T00:44:46.521091+00:00",
+  "gesture_labels": [
+    "FIST",
+    "OPEN_PALM",
+    "PEACE",
+    "PINCH",
+    "POINT",
+    "THUMBS_DOWN",
+    "THUMBS_UP"
+  ],
+  "num_gestures": 7,
+  "feature_count": 63,
+  "dataset_size": 941,
+  "train_size": 752,
+  "test_size": 189,
+  "metrics": {
+    "accuracy": 0.9841,
+    "precision": 0.9845,
+    "recall": 0.9841,
+    "f1_score": 0.9842
+  },
+  "confusion_matrix": {
+    "labels": [
+      "FIST",
+      "OPEN_PALM",
+      "PEACE",
+      "PINCH",
+      "POINT",
+      "THUMBS_DOWN",
+      "THUMBS_UP"
+    ],
+    "matrix": [
+      [
+        26,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        27,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        28,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        26,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        26,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        26,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        27
+      ]
+    ]
+  }
+}
