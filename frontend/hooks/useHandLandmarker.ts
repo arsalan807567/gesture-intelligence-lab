@@ -8,10 +8,12 @@ import {
 } from "@mediapipe/tasks-vision";
 
 type Status = "idle" | "loading" | "ready" | "denied" | "error";
+const RESULT_INTERVAL_MS = 100;
 
 export function useHandLandmarker(videoRef: React.RefObject<HTMLVideoElement>) {
   const landmarkerRef = useRef<HandLandmarker | null>(null);
   const rafRef = useRef<number | null>(null);
+  const lastUpdateRef = useRef(0);
   const [status, setStatus] = useState<Status>("idle");
   const [result, setResult] = useState<HandLandmarkerResult | null>(null);
 
@@ -31,9 +33,9 @@ export function useHandLandmarker(videoRef: React.RefObject<HTMLVideoElement>) {
           },
           runningMode: "VIDEO",
           numHands: 1,
-          minHandDetectionConfidence: 0.7,
-          minHandPresenceConfidence: 0.7,
-          minTrackingConfidence: 0.7,
+          minHandDetectionConfidence: 0.6,
+          minHandPresenceConfidence: 0.6,
+          minTrackingConfidence: 0.6,
         });
         if (cancelled) return;
         landmarkerRef.current = landmarker;
@@ -61,11 +63,16 @@ export function useHandLandmarker(videoRef: React.RefObject<HTMLVideoElement>) {
     }
 
     function loop() {
+      if (cancelled) return;
       const video = videoRef.current;
       const landmarker = landmarkerRef.current;
       if (video && landmarker && video.readyState >= 2) {
-        const res = landmarker.detectForVideo(video, performance.now());
-        setResult(res);
+        const now = performance.now();
+        if (now - lastUpdateRef.current >= RESULT_INTERVAL_MS) {
+          lastUpdateRef.current = now;
+          const res = landmarker.detectForVideo(video, now);
+          setResult(res);
+        }
       }
       rafRef.current = requestAnimationFrame(loop);
     }
