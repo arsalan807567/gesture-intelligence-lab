@@ -72,7 +72,12 @@ export default function DrawPage() {
         <p className="mt-4 text-red-400">Camera access required.</p>
       )}
       <div className="relative mt-6 w-[640px] h-[480px] rounded-lg overflow-hidden border border-neutral-800 bg-black">
-        <video ref={videoRef} className="hidden" muted playsInline />
+        <video
+          ref={videoRef}
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-0"
+          muted
+          playsInline
+        />
         <canvas ref={canvasRef} width={640} height={480} className="absolute top-0 left-0" />
       </div>
       <div className="mt-3 flex items-center gap-2 text-sm text-neutral-400">
