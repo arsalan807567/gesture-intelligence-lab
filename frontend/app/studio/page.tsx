@@ -23,13 +23,13 @@ export default function StudioPage() {
       </p>
 
       <div className="mt-4 flex gap-3">
-        
+        <a
           href="/studio/draw"
           className="px-4 py-2 rounded-lg border border-neutral-700 hover:border-cyan-500 hover:text-cyan-400 transition text-sm"
         >
           Open Drawing Mode
         </a>
-        
+        <a
           href="/studio/fireworks"
           className="px-4 py-2 rounded-lg border border-neutral-700 hover:border-pink-500 hover:text-pink-400 transition text-sm"
         >
