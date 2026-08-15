@@ -18,6 +18,24 @@ export default function StudioPage() {
   return (
     <div className="px-6 py-16">
       <h1 className="text-2xl font-semibold">Gesture Studio</h1>
+      <p className="mt-2 text-sm text-neutral-500">
+        Live hand tracking and gesture classification.
+      </p>
+
+      <div className="mt-4 flex gap-3">
+        
+          href="/studio/draw"
+          className="px-4 py-2 rounded-lg border border-neutral-700 hover:border-cyan-500 hover:text-cyan-400 transition text-sm"
+        >
+          Open Drawing Mode
+        </a>
+        
+          href="/studio/fireworks"
+          className="px-4 py-2 rounded-lg border border-neutral-700 hover:border-pink-500 hover:text-pink-400 transition text-sm"
+        >
+          Open Fireworks Mode
+        </a>
+      </div>
 
       {status === "denied" && (
         <p className="mt-4 text-red-400">

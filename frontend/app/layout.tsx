@@ -22,9 +22,6 @@ export default function RootLayout({
             <a href="/studio" className="hover:text-neutral-100 transition">
               Gesture Studio
             </a>
-            <a href="/control" className="hover:text-neutral-100 transition">
-              Gesture Control
-            </a>
             <a href="/lab" className="hover:text-neutral-100 transition">
               Model Lab
             </a>
