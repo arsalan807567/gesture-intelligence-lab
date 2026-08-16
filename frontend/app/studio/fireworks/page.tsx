@@ -52,7 +52,7 @@ export default function FireworksPage() {
       spawn(320, 240, 60);
     }
 
-    if (gesture === "PINCH" && pointer) {
+    if (gesture === "POINT" && pointer) {
       const now = performance.now();
       if (now - lastSpawn.current > 150) {
         lastSpawn.current = now;
@@ -95,7 +95,7 @@ export default function FireworksPage() {
     <div className="px-6 py-16">
       <h1 className="text-2xl font-semibold">Gesture Fireworks</h1>
       <p className="mt-2 text-sm text-neutral-500">
-        PINCH to launch small bursts · THUMBS_UP for a big burst · FIST to clear · PEACE to change colors
+        POINT to launch small bursts · THUMBS_UP for a big burst · FIST to clear · PEACE to change colors
       </p>
       {status === "denied" && (
         <p className="mt-4 text-red-400">Camera access required.</p>

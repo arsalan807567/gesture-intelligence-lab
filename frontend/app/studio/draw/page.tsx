@@ -44,7 +44,7 @@ export default function DrawPage() {
       return;
     }
 
-    if (gesture === "PINCH" && pointer) {
+    if (gesture === "POINT" && pointer) {
       const x = pointer.x * canvas.width;
       const y = pointer.y * canvas.height;
       ctx.strokeStyle = COLORS[colorIdx.current];
@@ -66,7 +66,7 @@ export default function DrawPage() {
     <div className="px-6 py-16">
       <h1 className="text-2xl font-semibold">Gesture Drawing</h1>
       <p className="mt-2 text-sm text-neutral-500">
-        PINCH to draw · FIST to clear · PEACE to change color · THUMBS_UP to save
+        POINT to draw · FIST to clear · PEACE to change color · THUMBS_UP to save
       </p>
       {status === "denied" && (
         <p className="mt-4 text-red-400">Camera access required.</p>
