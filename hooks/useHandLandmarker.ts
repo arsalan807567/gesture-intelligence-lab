@@ -9,7 +9,7 @@ import {
 
 type Status = "idle" | "loading" | "ready" | "denied" | "error";
 
-export function useHandLandmarker(videoRef: React.RefObject<HTMLVideoElement>) {
+export function useHandLandmarker(videoRef: React.RefObject<HTMLVideoElement | null>) {
   const landmarkerRef = useRef<HandLandmarker | null>(null);
   const rafRef = useRef<number | null>(null);
   const [status, setStatus] = useState<Status>("idle");
