@@ -64,7 +64,10 @@ export default function DrawPage() {
 
   return (
     <div className="px-6 py-16">
-      <h1 className="text-2xl font-semibold">Gesture Drawing</h1>
+      <a href="/studio" className="text-sm text-neutral-500 hover:text-neutral-300 transition">
+        ← Back to Studio
+      </a>
+      <h1 className="mt-3 text-2xl font-semibold">Gesture Drawing</h1>
       <p className="mt-2 text-sm text-neutral-500">
         POINT to draw · FIST to clear · PEACE to change color · THUMBS_UP to save
       </p>
